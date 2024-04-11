@@ -169,7 +169,7 @@ class Character {
   class Game {
     constructor() {
       this.turnLeft = 10; // Nombre de tours restants
-      this.characters = [grace, ulder, moana, draven, carl]; // Liste des personnages du jeu
+      this.characters = [grace, ulder, moana, draven, carl, dooku, zadig]; // Liste des personnages du jeu
     }
   
     // Méthode pour commencer un tour
