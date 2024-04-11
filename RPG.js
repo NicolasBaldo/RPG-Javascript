@@ -114,14 +114,57 @@ class Character {
       }
     }
   }
+  // Classe Wizard
+  class Wizard extends Character {
+    constructor() {
+        super(10, 2, 200); // Appel du constructeur de la classe mère avec des valeurs spécifiques
+        this.fireballAvailable = true;
+      }
+
+    // Méthode spéciale pour le Wizard : Fireball
+    fireball(victim) {
+        if (this.mana >= 25) {
+            victim.takeDamage(7);
+            this.mana -= 25;
+            this.fireballAvailable = false;
+            console.log(`${this.constructor.name} is attacking ${victim.constructor.name} with Fireball. He deals him 7 damage.`);
+        } else {
+            console.log("Not enough mana to perform Fireball.");
+        }
+    }
+}
+      class DiscJokey extends Character{
+         constructor()  {
+          super(20, 9 , 500);// Appel du constructeur de la classe mère avec des valeurs spécifiques
+          this.lancerdedisqueAvailable = true;
+         }
+
+      // Méthode spéciale pour le DiscJokey : Lancerdedisque
+       lancerdedisque(victim) {
+          if (this.mana >= 5) {
+            victim.takeDamage(9); 
+            this.mana -= 15; 
+            this.fireballAvailable = false; 
+            console.log(`${this.constructor.name} is attacking ${victim.constructor.name} with Lancerdedisque. he deals him 9 damage.`);
+            } else {
+              console.log("Not enough mana to perform Lancerdedisque");
+            }
+        }
+    }
   
+
+
+
   // Instanciation des personnages
   const grace = new Fighter();
   const ulder = new Paladin();
   const moana = new Monk();
   const draven = new Berzerker();
   const carl = new Assassin();
-  
+  const dooku = new Wizard();
+  const zadig = new DiscJokey();
+
+
   // Définition de la classe Game
   class Game {
     constructor() {
